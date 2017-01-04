@@ -1,7 +1,7 @@
 {
-  "name": "librsvg",
+  "name": "librsvg-prebuilt",
   "version": "0.7.0",
-  "description": "Parse SVG files and render them as PNG, PDF, SVG, or raw memory buffer images.",
+  "description": "Prebuilt librsvg binding. Parse SVG files and render them as PNG, PDF, SVG, or raw memory buffer images.",
   "keywords": [
     "svg",
     "render",
@@ -12,13 +12,25 @@
     "image",
     "images",
     "librsvg",
-    "cairo"
+    "cairo",
+    "prebuilt",
+    "windows",
+    "cross-platform"
   ],
+  "author": {
+    "name": "Wolfgang Felbermeier",
+    "email": "wf@felbermeier.com"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/2gis/node-rsvg.git"
+    "url": "https://github.com/f3lang/node-rsvg-prebuilt.git"
   },
-  "main": "index.js",
+  "homepage": "https://github.com/f3lang/node-rsvg-prebuilt",
+  "bugs": {
+    "url": "https://github.com/f3lang/node-rsvg-prebuilt/issues",
+    "email": "wf@felbermeier.com"
+  },
+  "main": "rsvg",
   "scripts": {
     "test": "gulp test",
     "install": "node-pre-gyp install --fallback-to-build"
