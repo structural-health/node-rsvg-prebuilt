@@ -39,7 +39,7 @@
       "module_name": "librsvg",
       "module_path": "./build/Release/",
       "host": "https://f3lang.s3.eu-central-1.amazonaws.com",
-      "package_name": "{module_name}-v{major}.{minor}.{patch}-{platform}-{arch}.tar.gz"
+      "package_name": "{module_name}-v{major}.{minor}.{patch}-n{node_abi}-{platform}-{arch}.tar.gz"
   },
   "dependencies": {
     "bindings": "~1.2.0",
