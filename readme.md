@@ -34,7 +34,7 @@ You have a cool idea/feature/pull request? Great! But please head over to https:
 Here is a simple example. Look in `index.js` for more documentation.
 
 ```javascript
-var Rsvg = require('librsvg').Rsvg;
+var Rsvg = require('librsvg-prebuilt').Rsvg;
 var fs = require('fs');
 
 // Create SVG render instance.
