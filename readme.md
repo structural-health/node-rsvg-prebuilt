@@ -7,8 +7,6 @@
  *  SVG
  *  Raw memory buffer image
 
-[![Build Status](https://travis-ci.org/f3lang/node-rsvg-prebuilt.svg?branch=master)](https://travis-ci.org/f3lang/node-rsvg-prebuilt)
-
 This repository is fork of https://github.com/2gis/node-rsvg with prebuilt binaries. It will be rebased on a regular basis.
 After spending days on getting the compilation to work under windows, i decided to publish prebuilt binaries of this project.
 
