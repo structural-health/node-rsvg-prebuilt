@@ -1,6 +1,6 @@
 {
   "name": "librsvg-prebuilt",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Prebuilt librsvg binding. Parse SVG files and render them as PNG, PDF, SVG, or raw memory buffer images.",
   "keywords": [
     "svg",
@@ -41,6 +41,14 @@
       "host": "https://f3lang.s3.eu-central-1.amazonaws.com/librsvg",
       "package_name": "{module_name}-v{major}.{minor}-{node_abi}-{platform}-{arch}.tar.gz"
   },
+  "files": [
+    "index.js",
+    "gulpfile.js",
+    "binding.gyp",
+    "tools",
+    "test",
+    "src"
+  ],
   "dependencies": {
     "bindings": "~1.2.0",
     "nan": "^2.4.0",
