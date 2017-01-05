@@ -1,6 +1,6 @@
 {
   "name": "librsvg-prebuilt",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Prebuilt librsvg binding. Parse SVG files and render them as PNG, PDF, SVG, or raw memory buffer images.",
   "keywords": [
     "svg",
@@ -38,8 +38,8 @@
   "binary": {
       "module_name": "librsvg",
       "module_path": "./build/Release/",
-      "host": "https://f3lang.s3.eu-central-1.amazonaws.com",
-      "package_name": "{module_name}-v{major}.{minor}.{patch}-n{node_abi}-{platform}-{arch}.tar.gz"
+      "host": "https://f3lang.s3.eu-central-1.amazonaws.com/librsvg",
+      "package_name": "{module_name}-v{major}.{minor}-{node_abi}-{platform}-{arch}.tar.gz"
   },
   "dependencies": {
     "bindings": "~1.2.0",
