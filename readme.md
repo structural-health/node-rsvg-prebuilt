@@ -1,4 +1,4 @@
-# Node.JS Binding for LibRSVG with prebuilt
+# Node.JS Binding for LibRSVG with prebuilt binaries
 
 **LibRSVG** is a SVG rendering library, which parses SVG files and renders them in various formats. The formats include:
 
@@ -10,6 +10,26 @@
 [![Build Status](https://travis-ci.org/f3lang/node-rsvg-prebuilt.svg?branch=master)](https://travis-ci.org/f3lang/node-rsvg-prebuilt)
 
 This repository is fork of https://github.com/2gis/node-rsvg with prebuilt binaries. It will be rebased on a regular basis.
+After spending days on getting the compilation to work under windows, i decided to publish prebuilt binaries of this project.
+
+Currently available binary releases are:
+
+| Node ABI Version | win32(ia32) | win32(x64) | darwin(ia32) | darwin(x64) | linux(ia32) | linux(x64) |
+|:----------------:|:-----------:|:----------:|:------------:|:-----------:|:-----------:|:----------:|
+|51                |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:x:|:white_check_mark:|
+|48                |:x:          |:white_check_mark:|:x:|:white_check_mark:|:x:|:white_check_mark:|
+|47                |:x:          |:white_check_mark:|:x:|:white_check_mark:|:x:|:white_check_mark:|
+|46                |:x:          |:white_check_mark:|:x:|:white_check_mark:|:x:|:white_check_mark:|
+|45                |:x:          |:white_check_mark:|:x:|:white_check_mark:|:x:|:white_check_mark:|
+|44                |:x:          |:white_check_mark:|:x:|:white_check_mark:|:x:|:white_check_mark:|
+|43                |:x:          |:white_check_mark:|:x:|:white_check_mark:|:x:|:white_check_mark:|
+|42                |:x:          |:white_check_mark:|:x:|:white_check_mark:|:x:|:white_check_mark:|
+|14                |:x:          |:white_check_mark:|:x:|:white_check_mark:|:x:|:white_check_mark:|
+|11                |:x:          |:white_check_mark:|:x:|:white_check_mark:|:x:|:white_check_mark:|
+
+## Contributing
+
+You have a cool idea/feature/pull request? Great! But please head over to https://github.com/2gis/node-rsvg since all changes should be made there.
 
 ## Basic Usage
 
@@ -83,4 +103,4 @@ Then try reinstalling this module. For further information, [see this thread](ht
 
 #### Windows:
 
-All nessecary files are bundled in the bina
+All nessecary files are bundled in the binary (yes, even the vc runtime)
