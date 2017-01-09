@@ -1,6 +1,6 @@
 {
   "name": "librsvg-prebuilt",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Prebuilt librsvg binding. Parse SVG files and render them as PNG, PDF, SVG, or raw memory buffer images.",
   "keywords": [
     "svg",
@@ -36,10 +36,10 @@
     "install": "node-pre-gyp install --fallback-to-build"
   },
   "binary": {
-      "module_name": "librsvg",
-      "module_path": "./build/Release/",
-      "host": "https://f3lang.s3.eu-central-1.amazonaws.com/librsvg",
-      "package_name": "{module_name}-v{major}.{minor}-{node_abi}-{platform}-{arch}.tar.gz"
+    "module_name": "librsvg",
+    "module_path": "./build",
+    "host": "https://f3lang.s3.eu-central-1.amazonaws.com/librsvg",
+    "package_name": "{module_name}-prebuilt-v{major}.{minor}.{patch}-{node_abi}-{platform}-{arch}.tar.gz"
   },
   "files": [
     "index.js",
