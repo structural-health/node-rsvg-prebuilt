@@ -34,7 +34,7 @@
   "scripts": {
     "test": "gulp test",
     "install": "node-pre-gyp install --fallback-to-build",
-    "prebuild": "rm ./prebuilds/* && prebuild --all && node namebuilds.js"
+    "prebuild": "rm -f ./prebuilds/* && prebuild --all && node namebuilds.js"
   },
   "binary": {
     "module_name": "librsvg",
