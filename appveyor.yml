@@ -30,12 +30,12 @@ environment:
 install:
   - ps: IF("%PLATFORM%" -eq "x64") {Start-FileDownload 'https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x64.tar.gz'}
   - ps: IF("%PLATFORM%" -eq "x86") {Start-FileDownload 'https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x86.tar.gz'}
-  - ps: Install-Product node $env:node_version
-  - ps: npm install
-  - ps: npm install -g prebuild
+  - ps: Install-Product node $env:nodejs_version
+  - npm install
+  - npm install -g prebuild
 
 build_script:
-  - ps: npm run prebuild
+  - npm run prebuild
 
 #artifacts:
 #  - path: gvsbuild-vs%VS_VER%-%PLATFORM%.tar.gz
