@@ -28,7 +28,7 @@ install:
 #  - ps: IF("%PLATFORM%" -eq "x86") {Start-FileDownload 'https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x86.tar.gz'}
   - curl -o gtk.tar.gz "https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x64.tar.gz"
   - 7z x gtk.tar.gz -so | 7z x -si -ttar -ogtk
-  - cp gtk c:\GTK
+  - cp -r gtk\release c:\GTK
   - dir c:\GTK
   - ps: Install-Product node $env:nodejs_version
   - npm install
