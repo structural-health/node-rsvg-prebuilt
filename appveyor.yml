@@ -1,5 +1,7 @@
 clone_folder: C:\librsvg-prebuilt
 
+version: '1.0.{build}'
+
 matrix:
   fast_finish: true
 
