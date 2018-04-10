@@ -30,7 +30,7 @@ install:
   - 7z x gtk.tar.gz -so | 7z x -si -ttar -ogtk
   - cp -r gtk\release c:\GTK
   - dir c:\GTK
-  - ps: Install-Product node $env:nodejs_version
+  - ps: Install-Product node $env:nodejs_version x64
   - npm install
   - npm install -g prebuild
 
