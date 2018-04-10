@@ -88,6 +88,17 @@
 					}
 				} ]
 			]
+		},
+		{
+			"target_name": "action_after_build",
+			"type": "none",
+			"dependencies": ["rsvg"],
+			"copies": [
+				{
+					"files": ["build/Release/rsvg.node"],
+					"destination": "build/"
+				}
+			]
 		}
 	]
 }
