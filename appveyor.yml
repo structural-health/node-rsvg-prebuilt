@@ -28,8 +28,8 @@ environment:
       PYTHON: C:\Python36-x64\python.exe
 
 install:
-  - ps: IF("%PLATFORM%"=="x64") Start-FileDownload 'https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x64.tar.gz'
-  - ps: IF("%PLATFORM%"=="x86") Start-FileDownload 'https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x86.tar.gz'
+  - ps: IF("%PLATFORM%"=="x64") {Start-FileDownload 'https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x64.tar.gz'}
+  - ps: IF("%PLATFORM%"=="x86") {Start-FileDownload 'https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x86.tar.gz'}
 
 build_script:
   - npm run prebuild
