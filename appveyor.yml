@@ -52,7 +52,7 @@ artifacts:
 on_success:
   - ps: rd -r build
   - mkdir build
-  - cp -r c:\GTK\bin\*.dll build\
+  - cp -r release/bin/*.dll build\
   - ps: foreach ($artifactName in $artifacts.keys) { 7z a $artifacts[$artifactName].path build }
 
 deploy: off
