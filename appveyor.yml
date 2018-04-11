@@ -37,6 +37,8 @@ install:
 
 build_script:
   - npm run prebuild
+  - dir .
+  - dir prebuilds
 
 #artifacts:
 #  - path: gvsbuild-vs%VS_VER%-%PLATFORM%.tar.gz
