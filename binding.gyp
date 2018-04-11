@@ -18,7 +18,7 @@
 				"src/Autocrop.cc"
 			],
 			"include_dirs": [
-				"<!(node -e \"require('nan')\")" 
+				"<!(node -e \"require('nan')\")"
 			],
 			"variables": {
 				"packages": "librsvg-2.0 cairo-pdf cairo-svg",
@@ -66,7 +66,7 @@
 						"<@(include_dirs)"
 					],
 					"libraries": [
-						'librsvg-2.dll.a',
+						'rsvg-2.dll',
 						'glib-2.0.lib',
 						'gobject-2.0.lib',
 						'cairo.lib'
