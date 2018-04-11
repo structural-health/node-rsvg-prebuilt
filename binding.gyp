@@ -66,7 +66,7 @@
 						"<@(include_dirs)"
 					],
 					"libraries": [
-						'rsvg-2.dll',
+						'rsvg-2.lib',
 						'glib-2.0.lib',
 						'gobject-2.0.lib',
 						'cairo.lib'
