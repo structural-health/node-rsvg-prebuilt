@@ -1,6 +1,6 @@
 {
   "name": "librsvg-prebuilt",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "Prebuilt librsvg binding. Parse SVG files and render them as PNG, PDF, SVG, or raw memory buffer images.",
   "keywords": [
     "svg",
