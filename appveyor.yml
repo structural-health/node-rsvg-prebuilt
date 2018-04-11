@@ -46,6 +46,9 @@ build_script:
 #cache:
 #  - '%DOWNLOAD_DIR%'
 
+artifacts:
+  - path: prebuilds\*.tar.gz
+
 deploy: off
 
 test: off
