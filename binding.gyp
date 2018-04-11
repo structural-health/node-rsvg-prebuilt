@@ -94,10 +94,18 @@
 			"type": "none",
 			"dependencies": ["rsvg"],
 			"copies": [
-				{
-					"files": ["build/Release/rsvg.node"],
-					"destination": "build/"
-				}
+				"conditions": [
+					[ "OS!='win'",
+					{
+						"files": ["build/Release/rsvg.node"],
+						"destination": "build/"
+					},
+					{
+                        "files": ["build/Release/rsvg.node", "<(GTK_Root)\\bin\\*.dll"],
+                        "destination": "build/"
+                    }
+					]
+				]
 			]
 		}
 	]
