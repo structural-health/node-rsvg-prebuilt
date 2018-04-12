@@ -1,15 +1,15 @@
 language: node_js
-compiler: g++-4.8
+compiler: g++-4.9
 os:
   - osx
 env:
-  - CXX=g++-4.8
+  - CXX=g++
 node_js:
   "node"
 before_script:
   - brew update
   - brew install librsvg
-  - brew install --cc=gcc-4.4 gcc@4.8
+  - brew install gcc49 --enable-cxx
   - npm install -g prebuild
 install:
   - npm install
