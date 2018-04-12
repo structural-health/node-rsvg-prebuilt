@@ -48,11 +48,17 @@ build_script:
 
 artifacts:
   - path: prebuilds\*.tar.gz
+    name: rsvg
 
 deploy:
   provider: S3
+  access_key_id:
+    secure: EKVhf46bH3vz3r9dU5pRno/NfYIHOKHlL6FxX+DGJ3Y=
+  secret_access_key:
+    secure: owN67YLOaud0J7agocaVpT9kzgkJK2eNox8mR8mB+Rie95WW7WhHl8WmjbJPQaRD
   bucket: f3lang
   region: eu-central-1
   folder: librsvg
+  artifact: rsvg
 
 test: off
