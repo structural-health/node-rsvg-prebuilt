@@ -6,10 +6,14 @@ env:
 node_js:
   "node"
 before_script:
-  - brew update
   - brew install librsvg
   - npm install -g prebuild
 install:
   - npm install
 script:
   - npm run prebuild
+addons:
+  artifacts: true
+    s3_region: "eu-central-1"
+    working_dir: prebuilds
+    target_paths: /librsvg
