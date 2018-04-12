@@ -16,4 +16,4 @@ addons:
   artifacts: true
     s3_region: "eu-central-1"
     working_dir: prebuilds
-    target_paths: /librsvg
+    target_paths: "/librsvg"
