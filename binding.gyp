@@ -43,7 +43,7 @@
 					],
 					"libraries": [
 						"<@(libraries)"
-					],
+					]
 				} ],
 				[ "OS=='mac'", {
 					"xcode_settings": {
@@ -56,7 +56,7 @@
 					},
 					"libraries": [
 						"<@(libraries)"
-					],
+					]
 				} ],
 				[ "OS=='win'", {
 					"sources+": [
@@ -93,20 +93,26 @@
 			"target_name": "action_after_build",
 			"type": "none",
 			"dependencies": ["rsvg"],
-			"copies": [
+			"copies": {
 				"conditions": [
-					[ "OS!='win'",
-					{
-						"files": ["build/Release/rsvg.node"],
-						"destination": "build/"
-					},
-					{
-                        "files": ["build/Release/rsvg.node", "<(GTK_Root)\\bin\\*.dll"],
-                        "destination": "build/"
-                    }
+					[
+						"OS!='win'",
+						{
+							"files": [
+								"build/Release/rsvg.node"
+							],
+							"destination": "build/"
+						},
+						{
+							"files": [
+								"build/Release/rsvg.node",
+								"<(GTK_Root)\\bin\\*.dll"
+							],
+							"destination": "build/"
+						}
 					]
 				]
-			]
+			}
 		}
 	]
 }
