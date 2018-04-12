@@ -8,6 +8,7 @@ node_js:
 before_script:
   - brew update
   - brew install librsvg
+  - npm install -g prebuild
 install:
   - npm install
 script:
