@@ -93,12 +93,13 @@
 			"target_name": "copy_generated_binary",
 			"type": "none",
 			"dependencies": ["rsvg"],
-			"copies": {
+			"copies": [{
 				"files": [
 					"build/Release/rsvg.node"
 				],
 				"destination": "build/"
 			}
+            ]
 		}
 	],
 	"conditions": [
@@ -111,7 +112,8 @@
 						"dependencies": [
 							"copy_generated_binary"
 						],
-						"copies": {
+						"copies": [
+                          {
 							"files": [
 								"<(GTK_Root)\\bin\\asprintf.dll",
 								"<(GTK_Root)\\bin\\atk-1.0-0.dll",
@@ -161,6 +163,7 @@
 							],
 							"destination": "build/"
 						}
+                          ]
 					}
 				]
 			}
