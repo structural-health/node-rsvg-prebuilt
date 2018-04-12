@@ -9,7 +9,7 @@ node_js:
 before_script:
   - brew update
   - brew install librsvg
-  - brew install gcc48 --enable-cxx
+  - brew install --cc=gcc-4.4 gcc@4.8
   - npm install -g prebuild
 install:
   - npm install
