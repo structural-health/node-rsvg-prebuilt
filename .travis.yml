@@ -17,6 +17,8 @@ script:
   - npm run prebuild
 
 deploy:
+  on:
+    branch: appveyor
   provider: s3
   bucket: "f3lang"
   access_key_id: $ARTIFACTS_KEY
