@@ -1,4 +1,7 @@
 language: node_js
+branches:
+  only:
+  - appveyor
 os:
   - osx
 env:
@@ -14,13 +17,11 @@ script:
   - npm run prebuild
 
 deploy:
-  on:
-    branch: appveyor
   provider: s3
   bucket: "f3lang"
   access_key_id: $ARTIFACTS_KEY
   secret_access_key: $ARTIFACTS_SECRET
   region: "eu-central-1"
   skip_cleanup: true
-  local_dir: build
+  local_dir: prebuilds
   upload-dir: librsvg
