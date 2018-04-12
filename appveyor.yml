@@ -47,7 +47,7 @@ build_script:
 #  - '%DOWNLOAD_DIR%'
 
 after_build:
-  - ps: Get-ChildItem .\prebuilds\*.tar.gz | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+  - ps: Get-ChildItem .\prebuilds\*.tar.gz | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName rsvg}
 
 #artifacts:
 #  - path: prebuilds\*.tar.gz
