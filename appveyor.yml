@@ -27,12 +27,11 @@ install:
 #  - ps: IF("%PLATFORM%" -eq "x64") {Start-FileDownload 'https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x64.tar.gz'}
 #  - ps: IF("%PLATFORM%" -eq "x86") {Start-FileDownload 'https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x86.tar.gz'}
 #  - curl -o gtk.tar.gz "https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x64.tar.gz"
-  - curl -o gtk.tar.gz "https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-x86.tar.gz"
+  - curl -o gtk.tar.gz "https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-%PLATFORM%.tar.gz"
   - 7z x gtk.tar.gz -so | 7z x -si -ttar -ogtk
   - cp -r gtk\release c:\GTK
   - dir c:\GTK
-  - ps: Install-Product node $env:nodejs_version x86
-  - python tools\include_dirs.py c:\\GTK librsvg-2.0 cairo-pdf cairo-svg
+  - ps: Install-Product node $env:nodejs_version %PLATFORM%
   - npm install
   - npm install -g prebuild
 
@@ -41,18 +40,8 @@ build_script:
   - dir .
   - dir prebuilds
 
-#artifacts:
-#  - path: gvsbuild-vs%VS_VER%-%PLATFORM%.tar.gz
-
-#cache:
-#  - '%DOWNLOAD_DIR%'
-
 after_build:
   - ps: Get-ChildItem .\prebuilds\*.tar.gz | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName rsvg}
-
-#artifacts:
-#  - path: prebuilds\*.tar.gz
-#    name: rsvg
 
 deploy:
   provider: S3
