@@ -49,6 +49,10 @@ build_script:
 artifacts:
   - path: prebuilds\*.tar.gz
 
-deploy: on
+deploy:
+  provider: S3
+  bucket: f3lang
+  region: eu-central-1
+  folder: librsvg
 
 test: off
