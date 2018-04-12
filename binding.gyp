@@ -90,29 +90,37 @@
 			]
 		},
 		{
-			"target_name": "action_after_build",
+			"target_name": "copy_generated_binary",
 			"type": "none",
 			"dependencies": ["rsvg"],
 			"copies": {
-				"conditions": [
-					[
-						"OS!='win'",
-						{
-							"files": [
-								"build/Release/rsvg.node"
-							],
-							"destination": "build/"
-						},
-						{
+				"files": [
+					"build/Release/rsvg.node"
+				],
+				"destination": "build/"
+			}
+		}
+	],
+	"conditions": [
+		[
+			"OS=='win'",{
+				"targets": [
+					{
+						"target_name": "copy_windows_natives",
+						"type": "none",
+						"dependencies": [
+							"copy_generated_binary"
+						],
+						"copies": {
 							"files": [
 								"build/Release/rsvg.node",
 								"<(GTK_Root)\\bin\\*.dll"
 							],
 							"destination": "build/"
 						}
-					]
+					}
 				]
 			}
-		}
+		]
 	]
 }
