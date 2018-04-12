@@ -12,8 +12,9 @@ install:
   - npm install
 script:
   - npm run prebuild
+
 addons:
-  artifacts: true
+  artifacts:
     s3_region: "eu-central-1"
     working_dir: prebuilds
     target_paths: "/librsvg"
