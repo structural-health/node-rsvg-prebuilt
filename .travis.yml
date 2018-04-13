@@ -15,7 +15,7 @@ before_script:
   - npm install -g prebuild
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm install; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker run -i -v "${PWD}:/MyProgram" daald/ubuntu32:trusty /bin/bash -c "linux32 --32bit i386 /MyProgram/build.sh"
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker run -i -v "${PWD}:/MyProgram" daald/ubuntu32:trusty /bin/bash -c "linux32 --32bit i386 /MyProgram/build.sh"; fi
 script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run prebuild; fi
   - ls prebuilds
