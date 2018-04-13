@@ -14,6 +14,8 @@ Currently available binary releases are:
 
 | Node ABI Version | win32(ia32) | win32(x64) | darwin(ia32) | darwin(x64) | linux(ia32) | linux(x64) |
 |:----------------:|:-----------:|:----------:|:------------:|:-----------:|:-----------:|:----------:|
+|59                |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
+|57                |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |51                |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |48                |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |47                |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
@@ -22,6 +24,10 @@ Currently available binary releases are:
 |42                |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |14                |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |11                |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
+|electron-v1.8.*   |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
+|electron-v1.7.*   |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
+|electron-v1.6.*   |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
+|electron-v1.5.*   |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |electron-v1.4.*   |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |electron-v1.3.*   |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |electron-v1.2.*   |:white_check_mark:|:white_check_mark:|:x:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
@@ -30,6 +36,8 @@ Currently available binary releases are:
 ## Contributing
 
 You have a cool idea/feature/pull request? Great! But please head over to https://github.com/2gis/node-rsvg since all changes should be made there.
+Currently the prebuilt binaries are generated against librsvg 2.40.16 so if you plan to use features, please consider
+compability with at least this version, so the builds won't fail and i don't have to rebuild gtk ;)
 
 ## Basic Usage
 
@@ -72,7 +80,7 @@ npm install librsvg-prebuilt
 
 Library versions known to work:
 
- *  LibRSVG 2.26+
+ *  LibRSVG 2.40.16+
  *  Cairo 1.8.8+
 
 #### Ubuntu:
