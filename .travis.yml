@@ -11,7 +11,7 @@ node_js:
   "node"
 before_script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install librsvg; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get install librsvg2.0-dev; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get install librsvg2-dev; fi
   - npm install -g prebuild
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm install; fi
