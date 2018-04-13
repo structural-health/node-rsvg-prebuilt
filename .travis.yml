@@ -15,7 +15,7 @@ before_script:
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm install; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker run -i -v "${PWD}:/MyProgram" daald/ubuntu32:trusty /bin/bash -c "linux32 --32bit i386 /MyProgram/build.sh"; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mv prebuilds prebuilds_32; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cp -r prebuilds prebuilds_32; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker run -i -v "${PWD}:/MyProgram" ubuntu:trusty /bin/bash -c "/MyProgram/build.sh"; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mv prebuilds_32/*.tar.gz prebuilds/ ; fi
 
