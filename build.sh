@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 apt-get update
-apt-get install -y librsvg2-dev curl build-essential
+apt-get install -y librsvg2-dev curl build-essential wget
 wget "https://github.com/GNOME/librsvg/archive/2.40.16.tar.gz" -O librsvg.tar.gz
 ls -la
 tar -xvzf librsvg.tar.gz
