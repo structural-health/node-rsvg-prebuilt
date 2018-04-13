@@ -15,3 +15,5 @@ npm install -g prebuild
 cd /MyProgram
 npm install
 npm run prebuild
+# evil stuff
+chmod -R 777 ./prebuilds
