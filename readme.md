@@ -103,4 +103,4 @@ Then try reinstalling this module. For further information, [see this thread](ht
 
 #### Windows:
 
-All nessecary files are bundled in the binary (yes, even the vc runtime)
+All nessecary files are bundled in the binary
