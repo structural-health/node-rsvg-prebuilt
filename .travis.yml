@@ -4,17 +4,21 @@ branches:
   - appveyor
 os:
   - osx
+  - linux
 env:
   - CXX=g++
 node_js:
   "node"
 before_script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install librsvg; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm install -g prebuild; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get install librsvg2.0-dev; fi
+  - npm install -g prebuild
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm install; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker run -i -v \"${PWD}:/MyProgram\" daald/ubuntu32:trusty /bin/bash -c \"linux32 --32bit i386 /MyProgram/build.sh\"
 script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run prebuild; fi
+  - ls prebuilds
 
 deploy:
   on:
