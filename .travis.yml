@@ -1,7 +1,7 @@
 language: node_js
 branches:
   only:
-  - appveyor
+  - release
 os:
   - osx
   - linux
@@ -25,7 +25,7 @@ script:
 
 deploy:
   on:
-    branch: appveyor
+    branch: release
   provider: s3
   bucket: "f3lang"
   access_key_id: $ARTIFACTS_KEY
