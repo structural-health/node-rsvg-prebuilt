@@ -1,6 +1,6 @@
 {
   "name": "librsvg-prebuilt",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "Prebuilt librsvg binding. Parse SVG files and render them as PNG, PDF, SVG, or raw memory buffer images.",
   "keywords": [
     "svg",
@@ -33,7 +33,8 @@
   "main": "rsvg",
   "scripts": {
     "test": "gulp test",
-    "install": "node-pre-gyp install --fallback-to-build"
+    "install": "node-pre-gyp install --fallback-to-build",
+    "prebuild": "rm -f ./prebuilds/* && prebuild --all --include-regex=\"\\.(node|dll)$\" && node namebuilds.js"
   },
   "binary": {
     "module_name": "librsvg",
@@ -60,6 +61,8 @@
     "gulp-jshint": "^1.9.0",
     "gulp-mocha": "^2.0.0",
     "jshint-stylish": "^1.0.0",
+    "node-abi": "^2.1.2",
+    "semver": "^5.5.0",
     "sinon": "~1.7.3",
     "sinon-chai": "~2.4.0"
   },

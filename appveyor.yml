@@ -1,0 +1,49 @@
+clone_folder: C:\librsvg-prebuilt
+
+version: 'build-#{build}'
+
+branches:
+  only:
+    - release
+
+environment:
+  nodejs_version: 9
+  global:
+    DOWNLOAD_DIR: _download_cache
+    APPVEYOR_SAVE_CACHE_ON_ERROR: true
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      VS_VER: "14"
+      PLATFORM: "x86"
+      PYTHON: C:\Python36\python.exe
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      VS_VER: "14"
+      PLATFORM: "x64"
+      PYTHON: C:\Python36-x64\python.exe
+
+install:
+  - curl -o gtk.tar.gz "https://s3.eu-central-1.amazonaws.com/f3lang/gtk3/gvsbuild-vs14-%PLATFORM%.tar.gz"
+  - 7z x gtk.tar.gz -so | 7z x -si -ttar -ogtk
+  - cp -r gtk\release c:\GTK
+  - ps: Install-Product node $env:nodejs_version $env:PLATFORM
+  - npm install
+  - npm install -g prebuild
+
+build_script:
+  - npm run prebuild
+
+after_build:
+  - ps: Get-ChildItem .\prebuilds\*.tar.gz | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName rsvg}
+
+deploy:
+  provider: S3
+  access_key_id:
+    secure: EKVhf46bH3vz3r9dU5pRno/NfYIHOKHlL6FxX+DGJ3Y=
+  secret_access_key:
+    secure: owN67YLOaud0J7agocaVpT9kzgkJK2eNox8mR8mB+Rie95WW7WhHl8WmjbJPQaRD
+  bucket: f3lang
+  region: eu-central-1
+  folder: librsvg
+  artifact: rsvg
+
+test: off
