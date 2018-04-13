@@ -9,12 +9,12 @@ env:
 node_js:
   "node"
 before_script:
-  - brew install librsvg
-  - npm install -g prebuild
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install librsvg; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm install -g prebuild; fi
 install:
-  - npm install
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm install; fi
 script:
-  - npm run prebuild
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run prebuild; fi
 
 deploy:
   on:
