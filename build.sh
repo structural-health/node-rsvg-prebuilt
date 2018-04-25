@@ -9,7 +9,7 @@ apt-get install -y gcc make rustc cargo automake autoconf libtool gettext itstoo
 make
 make install
 # node stuff
-curl -sL https://deb.nodesource.com/setup_10.x | bash -
+curl -sL https://deb.nodesource.com/setup_9.x | bash -
 apt-get install -y nodejs
 nodejs --version
 npm --version
