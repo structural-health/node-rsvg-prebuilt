@@ -8,7 +8,7 @@ os:
 env:
   - CXX=g++
 node_js:
-  "node"
+  "10.0.0"
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install librsvg; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm install -g prebuild; fi
