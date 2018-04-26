@@ -9,8 +9,22 @@ apt-get install -y gcc make rustc cargo automake autoconf libtool gettext itstoo
 make
 make install
 # node stuff
-curl -sL https://deb.nodesource.com/setup_9.x | bash -
-apt-get install -y nodejs
+if [[ $1 == "i386" ]]
+then
+    # for i386 architectures we need to build node by ourself, since nodejs does not publish i386 binaries anymore
+    # starting with release 10.x
+    cd /tmp
+    git clone https://github.com/nodejs/node.git
+    cd node
+    git checkout v10.x
+    ./configure
+    make
+    make install
+else
+# for x64 everything is fine
+    curl -sL https://deb.nodesource.com/setup_10.x | bash -
+    apt-get install -y nodejs
+fi
 nodejs --version
 npm --version
 npm install -g prebuild
