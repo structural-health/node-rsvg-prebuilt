@@ -16,6 +16,7 @@ let config = require('./package.json');
 
 buildList.forEach(build => {
 	let matched = build.match(/.*-electron-v(\d+)-(win32-ia32|win32-x64|linux-ia32|linux-x64|darwin-x64).*/);
+	console.log("Processing build " + build);
 	if (matched) {
 		let targetVersion = nodeAbi.getTarget(matched[1], "electron");
 		let targetElectronVersion = semver.major(targetVersion) + "." + semver.minor(targetVersion);
