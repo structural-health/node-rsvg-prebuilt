@@ -8,17 +8,16 @@ os:
 env:
   - CXX=g++
 node_js:
-  "node"
-before_script:
+  "10.0.0"
+before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install librsvg; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm install -g prebuild; fi
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm install; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker run -i -v "${PWD}:/MyProgram" daald/ubuntu32:trusty /bin/bash -c "linux32 --32bit i386 /MyProgram/build.sh"; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker run -i -v "${PWD}:/MyProgram" f3lang/node32bit:latest /bin/bash -c "linux32 --32bit i386 /MyProgram/build.sh i386"; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cp -r prebuilds prebuilds_32; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker run -i -v "${PWD}:/MyProgram" ubuntu:trusty /bin/bash -c "/MyProgram/build.sh"; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker run -i -v "${PWD}:/MyProgram" ubuntu:trusty /bin/bash -c "/MyProgram/build.sh x64"; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mv prebuilds_32/*.tar.gz prebuilds/ ; fi
-
 script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run prebuild; fi
   - ls prebuilds

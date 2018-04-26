@@ -14,6 +14,7 @@ Currently available binary releases are:
 
 | Node ABI Version | win32(ia32) | win32(x64) | darwin(x64) | linux(ia32) | linux(x64) |
 |:----------------:|:-----------:|:----------:|:-----------:|:-----------:|:----------:|
+|64                |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |59                |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |57                |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 |51                |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|

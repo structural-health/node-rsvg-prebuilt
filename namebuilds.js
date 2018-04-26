@@ -16,6 +16,7 @@ let config = require('./package.json');
 
 buildList.forEach(build => {
 	let matched = build.match(/.*-electron-v(\d+)-(win32-ia32|win32-x64|linux-ia32|linux-x64|darwin-x64).*/);
+	console.log("Processing build " + build);
 	if (matched) {
 		let targetVersion = nodeAbi.getTarget(matched[1], "electron");
 		let targetElectronVersion = semver.major(targetVersion) + "." + semver.minor(targetVersion);
@@ -23,7 +24,7 @@ buildList.forEach(build => {
 			targetElectronVersion = "1.0";
 		}
 		let target = 'librsvg-prebuilt-v' + config.version + '-electron-v' + targetElectronVersion + '-' + matched[2] + '.tar.gz';
-		fs.rename(path.join(__dirname, 'prebuilds', build), path.join(__dirname, 'prebuilds', target), (err) => console.log(err));
+		fs.renameSync(path.join(__dirname, 'prebuilds', build), path.join(__dirname, 'prebuilds', target), (err) => console.log(err));
 		if (targetElectronVersion === "1.1") {
 			fs.createReadStream(path.join(__dirname, 'prebuilds', target)).pipe(fs.createWriteStream(
 				path.join(__dirname, 'prebuilds', 'librsvg-prebuilt-v' + config.version + '-electron-v1.2-' + matched[2] + '.tar.gz')

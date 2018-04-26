@@ -9,8 +9,14 @@ apt-get install -y gcc make rustc cargo automake autoconf libtool gettext itstoo
 make
 make install
 # node stuff
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-apt-get install -y nodejs
+if [[ $1 == "x64" ]]
+then
+    # for x64 we are working with a blank ubuntu trusty image and need to install nodejs first
+    curl -sL https://deb.nodesource.com/setup_10.x | bash -
+    apt-get install -y nodejs
+fi
+nodejs --version
+npm --version
 npm install -g prebuild
 cd /MyProgram
 npm install
