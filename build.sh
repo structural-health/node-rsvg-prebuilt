@@ -9,19 +9,9 @@ apt-get install -y gcc make rustc cargo automake autoconf libtool gettext itstoo
 make
 make install
 # node stuff
-if [[ $1 == "i386" ]]
+if [[ $1 == "x64" ]]
 then
-    # for i386 architectures we need to build node by ourself, since nodejs does not publish i386 binaries anymore
-    # starting with release 10.x
-    cd /tmp
-    git clone https://github.com/nodejs/node.git
-    cd node
-    git checkout v10.x
-    ./configure
-    make
-    make install
-else
-# for x64 everything is fine
+    # for x64 we are working with a blank ubuntu trusty image and need to install nodejs first
     curl -sL https://deb.nodesource.com/setup_10.x | bash -
     apt-get install -y nodejs
 fi
