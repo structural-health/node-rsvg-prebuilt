@@ -36,7 +36,7 @@ Currently available binary releases are:
 
 ## Contributing
 
-You have a cool idea/feature/pull request? Great! But please head over to https://github.com/2gis/node-rsvg since all changes should be made there.
+You have a cool idea/feature/pull request? Great!
 Currently the prebuilt binaries are generated against librsvg 2.40.16 so if you plan to use features, please consider
 compability with at least this version, so the builds won't fail and i don't have to rebuild gtk ;)
 
