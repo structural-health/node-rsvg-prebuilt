@@ -30,4 +30,4 @@ gulp.task('test', function() {
 });
 
 
-gulp.task('default', ['jshint']);
+gulp.task('default', gulp.series(['jshint']));
